@@ -1,0 +1,9 @@
+---
+const { url } = Astro.props
+---
+
+<ul class="transition hover:scale-110 flex justify-center relative inline-block select-none whitespace-nowrap bg-purple-800 px-2 py-2 mx-2 mt-4 text-xs font-bold leading-none text-white rounded-full align-center items-center justify-center">
+    <li>
+        <a href={url} class="flex flex-row gap-1"><slot /></a>
+    </li>
+</ul>

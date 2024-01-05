@@ -1,0 +1,86 @@
+---
+import JavascriptIcon from "../icons/JavascriptIcon.astro";
+import CSSIcon from "../icons/CSSIcon.astro"
+import HtmlIcon from "../icons/HtmlIcon.astro"
+import OpenLinkButton from "./OpenLinkButton.astro";
+const PROJECTS = [
+    {
+        title: "Movies search",
+        description: "a website to search movies using react, vite and API.",
+        imageUrl: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        githubUrl: "/",
+        languages: [
+            {
+                name: "Javascript",
+                iconSvg: JavascriptIcon
+            },
+            {
+                name: "HTML",
+                iconSvg: HtmlIcon
+            },
+            {
+                name: "CSS",
+                iconSvg: CSSIcon
+            }
+        ]
+    },
+    {
+        title: "Tic Tac Toe",
+        description: "Tic Tac Toe o más conocido en chile como GATO",
+        imageUrl: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        githubUrl: "https://github.com/dylanMauro/tic-tac-toe",
+        languages: [
+            {
+                name: "Javascript",
+                iconSvg: JavascriptIcon
+            },
+            {
+                name: "HTML",
+                iconSvg: HtmlIcon
+            },
+            {
+                name: "CSS",
+                iconSvg: CSSIcon
+            }
+        ]
+    }
+]
+---
+
+<div class="container px-6 mt-16 mx-auto w-[900px]" id="projects">
+    <h1 class="text-3xl font-semibold capitalize lg:text-4xl dark:text-white">Proyectos</h1>
+    { 
+        PROJECTS.map(project => (
+            <div class="mt-8 mb-20 -mx-6 flex items-center">
+                <img class="object-cover w-full mx-6 w-1/2 rounded-xl h-72 h-96" src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"alt="">
+                <div class="w-1/2 mt-0 mx-6 self-start">
+                    <p class="block font-semibold text-4xl text-blue-800 hover:underline dark:text-white text-3xl">
+                        Title
+                    </p>
+                    <p class="my-2 font-bold text-gray-500 dark:text-gray-300 md:text-2xl text-xl">
+                        { project.title }
+                    </p>
+                    <p class="block font-semibold text-blue-800 hover:underline dark:text-white md:text-2xl">
+                        Description
+                    </p>
+                    <p class="mt-2 font-semibold text-gray-500 dark:text-gray-300 md:text-lg">
+                        { project.description }
+                    </p>
+                    <div>
+                        <OpenLinkButton>View the code on GitHub<OpenLinkButton/>
+                    </div>
+                    <p class="text-sm text-blue-500 uppercase font-bold mt-3 mb-2">Languages</p>
+                    <div class="flex flex-row gap-2">
+                    {
+                        project.languages.map(language => (
+                            <div class="rounded-md bg-gray-800 py-1 px-2 text-sm flex gap-1">
+                                {<language.iconSvg/>} { language.name }
+                            </div>
+                        ))
+                    }
+                    </div>
+                </div>
+            </div>
+        ))
+    }
+</div>

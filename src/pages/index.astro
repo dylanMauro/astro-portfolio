@@ -1,0 +1,36 @@
+---
+import Badge from '../components/Badge.astro';
+import Layout from '../layouts/Layout.astro';
+import Timeline from '../components/Timeline.astro';
+import GitHubIcon from '../icons/GitHubIcon.astro';
+import SocialPill from '../components/SocialPill.astro';
+import LinkedinIcon from '../icons/LinkedinIcon.astro';
+import GmailIcon from '../icons/GmailIcon.astro'
+import Projects from '../components/Projects.astro';
+import OpenLinkButton from '../components/OpenLinkButton.astro';
+---
+
+<Layout title="Portafolio Web Personal">
+	<main class="flex flex-col justify-center items-center">
+		<section class="w-[700px] py-14">
+			<h1 class="text-white text-5xl flex flex-row justify-center mb-8 font-bold">Hey, Soy Dylan <div class="flex items-center animate-bounce"><Badge>Disponible para trabajar</Badge></div></h1>
+			<h2 class="text-pretty text-xl">
+				+4 Años de estudios universitarios en ingeniería informática. De Santiago, Chile 🇨🇱. 
+				Preparado para crear Soluciones Tecnológicas
+				con herramientas Web
+			</h2>
+			<div class="flex flex-row gap-1">
+				<SocialPill url="https://github.com/dylanMauro" target="__blank"><GitHubIcon/>GitHub</SocialPill>
+				<SocialPill url="/"><LinkedinIcon/> LinkedIn</SocialPill>
+				<SocialPill url="/"><GmailIcon/>dylan.maurocm@gmail.com</SocialPill>
+			</div>
+		</section>
+		<section>
+			<Timeline />
+		</section>	
+		<section>
+			<Projects />
+		</section>
+	</main>
+</Layout>
+
